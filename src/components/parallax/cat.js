@@ -6,7 +6,7 @@ export default function Cat({ orientation, yDisplace, moveLeft, moveRight }) {
     const [catLocation, setCatLocation] = useState(0);
     console.log("rerender cat")
     console.log(moveRight)
-    if (moveRight) console.log(catLocation)
+    if (moveRight) setCatLocation(catLocation + 2)
     return (
         <div className='parallax__cat'>
             <img src={(orientation === 'right' || orientation === 'left') ? catWalk : catIdle} 
