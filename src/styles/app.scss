@@ -1,0 +1,23 @@
+@import './hero.scss';
+@import './parallax.scss';
+
+
+$scrollbar-track-colour: #201711;
+$scrollbar-thumb-colour:#e6ccb2;
+* {
+    scrollbar-width: thin;      
+    scrollbar-color: $scrollbar-thumb-colour $scrollbar-track-colour; 
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: $scrollbar-track-colour;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: $scrollbar-thumb-colour;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #b08968;
+    }
+}
