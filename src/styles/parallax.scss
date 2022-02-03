@@ -10,15 +10,15 @@
     }
     &--fourth {
         background-image: url($fourth);
-        animation: 900s ease-in infinite;
+        animation: 900s unset infinite;
     }
     &--third {
         background-image: url($third);
-        animation: 800s ease-in infinite;
+        animation: 800s unset infinite;
     }
     &--second {
         background-image: url($second);
-        animation: 1100s ease-in infinite;
+        animation: 1100s unset infinite;
     }
     &--first {
         background-image: url($first);
@@ -41,31 +41,31 @@
     }
     &__text {
         color: white;
-        transition: opacity 2s ease-in-out;
         p {
             font-size: calc(1em + .8vh);
             width: 75vw;
             margin-block: calc(0em + 4vh);
+            transition: opacity 500ms ease-in-out;
             &:nth-child(1) {
-                margin-top: calc(2em + 10vh);
-                margin-left: calc(2em + 1vw + 6vh);
+                margin-top: calc(1em + 3vw);
+                margin-left: calc(2em + 1vw);
             }
             &:nth-child(2) {
-                margin-left: calc(3em + 1vw + 6vh);
+                margin-left: calc(3em + 1vw);
             }
             &:nth-child(3) {
-                margin-left: calc(4em + 1vw + 6vh);
+                margin-left: calc(4em + 1vw);
             }
             &:nth-child(4) {
-                margin-left: calc(5em + 1vw + 6vh);
+                margin-left: calc(5em + 1vw);
             }
             &:nth-child(5) {
-                margin-left: calc(6em + 1vw + 6vh);
+                margin-left: calc(6em + 1vw);
             }
         }
     }
     .instructions{
-        font-size: 3em;
+        font-size: calc(.8em + 2vw);
         position: absolute;
         bottom: 0;
         transition: opacity 1.5s ease-in-out;

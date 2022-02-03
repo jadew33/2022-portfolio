@@ -2,7 +2,7 @@ import React from 'react';
 import Browser from './Browser';
 import Terminal from './Terminal';
 import idle from '../../assets/idlecat.gif'
-import { GoToNext } from '../navigation/sectionLinks';
+import GoToNext from '../navigation/next-nav';
 
 
 
