@@ -45,13 +45,15 @@ function App() {
       </Element>
       {/* <Element id="scene3">
         <div style={{ height: '100vh' }} >3rd component</div>
-      </Element>
-      <Element id="scene4">
-        <div style={{ height: '100vh', border: "1px solid black" }} >4rd component</div>
-        <h1 style={{ position: 'absolute', color: 'black', zIndex: '1', bottom: '0' }} onClick={() => scroll.scrollToTop({
-          duration: 1000,
-        })}>Go To Top</h1>
       </Element> */}
+      <Element id="scene3" >
+        <div style={{ height: '100vh', fontSize: '2em', display: 'flex', justifyContent: "center", alignItems: "center", flexDirection: 'column' }}>
+          <h1>WIP :)</h1>
+          <h1 style={{ color: 'red', fontSize: '1em'}} onClick={() => scroll.scrollToTop({
+            duration: 1000,
+          })}>Click me to return to top</h1></div>
+
+      </Element>
 
     </div>
   );
