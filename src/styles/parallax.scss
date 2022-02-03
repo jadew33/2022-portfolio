@@ -1,80 +1,92 @@
-$fourth: "../assets/parallax/j1.png";
-$third: "../assets/parallax/j2.png";
-$second: "../assets/parallax/j3.png";
-$first: "../assets/parallax/j4.png";
-
 .parallax {
+    font-family: $quicksand;
     width: 100vw;
+    color: white;
     height: 100vh;
     position: relative;
     &--wrapper {
         position: absolute;
-        transition: top 1s ease-in-out;
+        top: 0;
     }
     &--fourth {
         background-image: url($fourth);
-        animation: 500s linear infinite;
-        z-index: -1;
+        animation: 900s ease-in infinite;
     }
     &--third {
         background-image: url($third);
-        background-repeat: repeat;
-        animation:  800s linear infinite;
-        z-index: -1;
+        animation: 800s ease-in infinite;
     }
     &--second {
         background-image: url($second);
-        animation:  1100s linear infinite;
-        z-index: -1;
+        animation: 1100s ease-in infinite;
     }
     &--first {
         background-image: url($first);
-        z-index: -1;
     }
     .pos {
         position: absolute;
-        top: 0;
-        left: 0;
         width: 100vw;
         height: 100vh;
+        z-index: -1;
         background-size: auto 100%;
+        background-color: rgba(0, 0, 0, 0.15);
+        background-blend-mode: darken;
     }
     img {
         position: absolute;
         height: 10em;
         z-index: 1;
-        // transition: top 1ms ease-in-out;
+        bottom: 0;
+        transition: left ease-in-out;
     }
-    h1{
-        // z-index: 5;
-        // position: fixed;
+    &__text {
         color: white;
-        text-align: center;
-        position: relative;
-        bottom: 5em;
+        transition: opacity 2s ease-in-out;
+        p {
+            font-size: calc(1em + .8vh);
+            width: 75vw;
+            margin-block: calc(0em + 4vh);
+            &:nth-child(1) {
+                margin-top: calc(2em + 10vh);
+                margin-left: calc(2em + 1vw + 6vh);
+            }
+            &:nth-child(2) {
+                margin-left: calc(3em + 1vw + 6vh);
+            }
+            &:nth-child(3) {
+                margin-left: calc(4em + 1vw + 6vh);
+            }
+            &:nth-child(4) {
+                margin-left: calc(5em + 1vw + 6vh);
+            }
+            &:nth-child(5) {
+                margin-left: calc(6em + 1vw + 6vh);
+            }
+        }
     }
-    .animateBackgroundRight{
+    .instructions{
+        font-size: 3em;
+        position: absolute;
+        bottom: 0;
+        transition: opacity 1.5s ease-in-out;
+    }
+    .forward {
+        width: 100vw;
+        text-align: center;
+    }
+    .back {
+        left: 1em;
+    }
+    .right {
         animation-name: animatedBackgroundRight;
     }
-    .animateBackgroundLeft{
+    .left {
         animation-name: animatedBackgroundLeft;
     }
-}
-
-@keyframes animatedBackgroundRight {
-    from {
-        background-position: 0 0;
+    .hideText {
+        opacity: 0;
     }
-    to {
-        background-position: -10000px 0;
-    }
-}
-
-@keyframes animatedBackgroundLeft {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 10000px 0;
+    .showText {
+        opacity: 1;
     }
 }

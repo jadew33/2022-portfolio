@@ -1,9 +1,9 @@
+@import 'anims';
+@import 'variables';
 @import './hero.scss';
 @import './parallax.scss';
+@import'./nav.scss';
 
-
-$scrollbar-track-colour: #201711;
-$scrollbar-thumb-colour:#e6ccb2;
 * {
     scrollbar-width: thin;      
     scrollbar-color: $scrollbar-thumb-colour $scrollbar-track-colour; 
@@ -18,6 +18,6 @@ $scrollbar-thumb-colour:#e6ccb2;
         background: $scrollbar-thumb-colour;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: #b08968;
+        background:$scrollbar-thumb-hover;
     }
 }

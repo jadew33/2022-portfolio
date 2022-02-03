@@ -1,44 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import useCatDisplacement from '../../hooks/useCatDisplacement';
 
 import useKeyPress from '../../hooks/useKeyPress';
+import { GoToPrevious, GoToNext } from '../navigation/sectionLinks';
 import Cat from './cat';
+import ParallaxText from './text';
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 export default function ParallaxLoad({ scrollPosition, width, height }) {
-    // idea's jump scroll?
-    console.log("rerender parallax")
-
-    const calculateOffset = () => {
-        let result = (scrollPosition - returnB(1, -640, 410, -110)) / returnM(1, -640, 410, -110);
-        return scrollPosition > 300 ? -14 * 16 : result;
-    };
-    const calculateCatOffsetHorizontal = () => 64;
-    const calculateCatOffsetVertical = () => (height - returnB(975, 695, 829, 665)) / returnM(975, 695, 829, 665);
-
     const leftPress = useKeyPress(['a', 'A', 'ArrowLeft']);
     const rightPress = useKeyPress(['d', 'D', 'ArrowRight'])
+    const catX = useCatDisplacement(width);
 
-    const returnM = (y, x, y2, x2) => (y - y2) / (x - x2);
-    const returnB = (y, x, y2, x2) => y - (x * returnM(y, x, y2, x2));
+    // const [showBackInstructions, setShowBackInstructions] = useState(false);
+    // c
 
-    const backgroundDirection = () => {
-        if (leftPress) return 'animateBackgroundLeft';
-        if (rightPress) return 'animateBackgroundRight'
+    const direction = () => {
+        if (leftPress) return 'left';
+        if (rightPress) return 'right'
         return null;
     }
 
-    const catOrientation = () => {
-        if (leftPress) return 'left';
-        if (rightPress) return 'right'
-        return undefined;
-    }
-
     return <div className='parallax'>
-        <div className='parallax--wrapper' style={{ top: `${calculateOffset()}px` }}>
-            <div className={`pos parallax--first ${backgroundDirection()}`}></div>
-            <div className={`pos parallax--second ${backgroundDirection()}`}></div>
-            <div className={`pos parallax--third ${backgroundDirection()}`}></div>
-            <div className={`pos parallax--fourth ${backgroundDirection()}`}></div>
-            <Cat orientation={catOrientation()} yDisplace={calculateCatOffsetVertical()} moveLeft={leftPress} moveRight={rightPress}/>
+        <div className='parallax--wrapper' >
+            <div className={`pos parallax--first ${direction()}`}></div>
+            <div className={`pos parallax--second ${direction()}`} style={{ backgroundPosition: `${-(.5 * catX)}px` }}>
+            </div>
+            <div className={`pos parallax--third ${direction()}`} style={{ backgroundPosition: `${-(.8 * catX)}px` }}></div>
+            <div className={`pos parallax--fourth ${direction()}`} style={{ backgroundPosition: `${-(1 * catX)}px` }}></div>
+            <ParallaxText scrollPosition={scrollPosition} catPosition={catX} width={width} />
         </div>
+        <Cat orientation={direction()} moveLeft={leftPress} moveRight={rightPress} width={width} />
+        <p className={`forward instructions  ${catX === 0 ? "showText" : "hideText"}`}>Hold d or keyboard right to move forward</p>
+      <p className={`back instructions  ${(catX > width*.45 && catX < width*.5) ? 'showText' : 'hideText'}`}>Hold a or keyboard left to move back</p>
+        {catX > width*.8 && <GoToNext nextScene="scene3" style={{ right: 0 }}/>}
     </div>
 }
+ 

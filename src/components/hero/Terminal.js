@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Terminal() {
+export default function Terminal({width,height}) {
     return (
-        <div className='hero__terminal'>
-            <span className='comment'>{'//'} Hello World! </span> <br /><br />
+        <div className='terminal'>
+            <span >{'//'} Hello World! </span> <br /><br />
             <span className='variable-type'>let</span > <span className='variable-name'>person</span> = {'{'} <br />
             <span className='key'>name: </span>
             <span className='value'>'Jade Wei'</span>,<br />
@@ -12,7 +12,9 @@ export default function Terminal() {
             <span className='key'>location: </span>
             <span className='value'>'Canada'</span>,<br />
             {'}'};<br /><br />
-            <span className='component'>{'<'} Cat {'/>'}</span>
+            <span className='component'>{'<'} Cat {'/>'}</span> <br/><br/><br/> 
+            {(height > 840 || (height > 500 && width > 700) || (width > 930 && height > 675)) && <span style={{maxWidth:''}}>{'//'}  Welcome to my collection of odds and ends -- web dev edition!
+                </span>}
         </div>
     )
 }

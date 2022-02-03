@@ -7,7 +7,7 @@ import useWindowDimensions from '../../hooks/useWindowDimensions';
 export default function Browser() {
     const [showLove, setShowLove] = useState(false);
     const { width } = useWindowDimensions();
-    return <div className='hero__browser'>
+    return <div className='browser'>
         <span onMouseEnter={() => setShowLove(true)} onMouseLeave={() => setShowLove(false)}>
             <img className='cat' src={showLove ? love : idle} alt="cat animation" />
             {(showLove && width > 724) && <img className='love' src={heart} alt="floating hearts" />}
