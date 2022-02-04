@@ -2,14 +2,17 @@ import React from 'react';
 import useCatDisplacement from '../../hooks/useCatDisplacement';
 
 import useKeyPress from '../../hooks/useKeyPress';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 import GoToNext from '../navigation/next-nav';
 import Cat from './cat';
 import ParallaxText from './text';
 
-export default function ParallaxLoad({ width }) {
+export default function ParallaxLoad() {
+    const { width } = useWindowDimensions();
+    const catX = useCatDisplacement(width);
+
     const leftPress = useKeyPress(['a', 'A', 'ArrowLeft']);
     const rightPress = useKeyPress(['d', 'D', 'ArrowRight'])
-    const catX = useCatDisplacement(width);
 
     const direction = () => {
         if (leftPress) return 'left';

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import catIdle from '../../assets/cat/gifs/cat03_idle_blink_8fps.gif'
-import catWalk from '../../assets/cat/gifs/cat03_run_12fps.gif'
+import React from 'react';
+import catIdle from '../../assets/cat/idle.gif'
+import catWalk from '../../assets/cat/run.gif'
 import useCatDisplacement from '../../hooks/useCatDisplacement';
 
 export default function Cat({ orientation, width }) {
