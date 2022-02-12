@@ -4,6 +4,14 @@
     color: white;
     height: 100vh;
     position: relative;
+    
+    // Enable hardware acceleration so that graphics are smoother
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    
     &--wrapper {
         position: absolute;
         top: 0;

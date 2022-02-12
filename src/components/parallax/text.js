@@ -23,7 +23,7 @@ export default function ParallaxText({ catPosition, width }) {
             </p>
             <p className={`${catPosition > (.75)*width && catPosition < width*(.9) ? 'showText' : 'hideText'}`}>
                 Currently, I am doing a year long coop at Opencare. Here I have the chance to work with our apps written in
-                Angular and React, making changes as well as adding new additions to better accomodate the needs of our patients.
+                AngularJS and React, making changes as well as adding new additions to better accomodate the needs of our patients.
             </p>
         </div>
     )
