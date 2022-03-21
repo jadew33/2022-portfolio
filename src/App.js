@@ -4,6 +4,7 @@ import './styles/app.scss'
 import React from 'react';
 import useWindowDimensions from './hooks/useWindowDimensions';
 import { Element, animateScroll as scroll } from 'react-scroll'
+import Slideshow from './components/parallax/slideshow';
 
 function App() {
   const { height, width } = useWindowDimensions();
@@ -11,8 +12,9 @@ function App() {
   return (
       <div className="App" >
         <Hero />
+        {/* <h1> {height} w {width}</h1> */}
         <Element id="scene2">
-          {(width > 769 && height > 800) && <ParallaxLoad/>}
+          {(width > 900 && height > 700) ? <ParallaxLoad/> : <Slideshow/>}
         </Element>
         <Element id="scene3" >
           <div style={{ height: '100vh', fontSize: '2em', display: 'flex', justifyContent: "center", alignItems: "center", flexDirection: 'column' }}>

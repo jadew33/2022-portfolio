@@ -12,7 +12,7 @@ export default function Hero() {
             <Terminal />
             {(width > 769 && height < 1359) ? <Browser /> :
                 <img className='mobile-cat' src={idle} alt="cat animation" />}
-            {(width > 700 && height > 800) && <GoToNext nextScene="scene2" text="next" />}
+            {(width > 769 && height > 700) && <GoToNext nextScene="scene2" text="next" />}
         </div>
     );
 }

@@ -19,7 +19,8 @@ export default function ParallaxLoad() {
         if (rightPress) return 'right'
         return null;
     }
-
+    console.log(catX)
+console.log(width*.85)
     return <div className='parallax'>
         <div className='parallax--wrapper' >
             <div className={`pos parallax--first ${direction()}`}></div>
@@ -30,6 +31,6 @@ export default function ParallaxLoad() {
         </div>
         <Cat orientation={direction()} moveLeft={leftPress} moveRight={rightPress} width={width} />
         <p className={`forward instructions  ${catX === 0 ? "showText" : "hideText"}`}>Hold d to move forward, a to move back</p>
-        {catX > width * .85 && <GoToNext nextScene="scene3" />}
+        {catX > width * .75 && <GoToNext nextScene="scene3" />}
     </div>
 }
