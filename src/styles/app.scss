@@ -1,29 +1,30 @@
-@import 'anims';
-@import 'variables';
-@import './hero.scss';
-@import './parallax.scss';
-@import './slideshow.scss';
-@import'./nav.scss';
+@import "anims";
+@import "variables";
+@import "./hero";
+@import "./parallax";
+@import "./nav";
+@import "./carousel";
+@import "./slideshow";
+@import "./contact";
 
 .App {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
-
 * {
-    scrollbar-width: thin;      
-    scrollbar-color: $scrollbar-thumb-colour $scrollbar-track-colour; 
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-        background: $scrollbar-track-colour;
-    }
-    ::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background: $scrollbar-thumb-colour;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background:$scrollbar-thumb-hover;
-    }
+  scrollbar-width: thin;
+  scrollbar-color: $scrollbar-thumb-colour $scrollbar-track-colour;
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: $scrollbar-track-colour;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: $scrollbar-thumb-colour;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $scrollbar-thumb-hover;
+  }
 }

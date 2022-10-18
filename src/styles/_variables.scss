@@ -1,11 +1,10 @@
 // Colours
 $scrollbar-track-colour: #201711;
-$scrollbar-thumb-colour:#e6ccb2;
-$scrollbar-thumb-hover:  #b08968;
-
+$scrollbar-thumb-colour: #e6ccb2;
+$scrollbar-thumb-hover: #b08968;
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
 $quicksand: "Quicksand", sans-serif;
 
 // Assets
@@ -14,3 +13,8 @@ $third: "../assets/parallax/j2.png";
 $second: "../assets/parallax/j3.png";
 $first: "../assets/parallax/j4.png";
 $chrome-background: "../assets/browser.jpg";
+
+// Breakpoints
+$screen-md: "992px";
+$screen-sm: "768px";
+$screen-xs: "420px";
