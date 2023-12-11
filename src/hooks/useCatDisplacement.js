@@ -1,25 +1,43 @@
-import { useState, useEffect } from "react";
-// eslint-disable-next-line react-hooks/exhaustive-deps
+import { useState, useEffect, useCallback } from "react";
+
 export default function useCatDisplacement(width) {
   const [catLocation, setCatLocation] = useState(0);
-  function downHandler({ key }) {
-    if (
-      (key === "d" || key === "D" || key === "ArrowRight") &&
-      catLocation < width - 180
-    ) {
-      setCatLocation(catLocation + 5);
-    } else if (
-      (key === "a" || key === "A" || key === "ArrowLeft") &&
-      catLocation > 0
-    ) {
-      setCatLocation(catLocation - 5);
-    } else setCatLocation(catLocation);
-  }
+
+  const downHandler = useCallback(
+    ({ key }) => {
+      setCatLocation((prevLocation) => {
+        let newLocation = prevLocation;
+        if (
+          (key === "d" || key === "D" || key === "ArrowRight") &&
+          prevLocation < width - 180
+        ) {
+          newLocation += 5;
+        } else if (
+          (key === "a" || key === "A" || key === "ArrowLeft") &&
+          prevLocation > 0
+        ) {
+          newLocation -= 5;
+        }
+        return newLocation;
+      });
+    },
+    [width]
+  );
+
   useEffect(() => {
-    window.addEventListener("keydown", downHandler);
-    return () => {
-      window.removeEventListener("keydown", downHandler);
+    const handleKeyDown = (e) => {
+      downHandler(e);
+      requestAnimationFrame(() =>
+        setCatLocation((prevLocation) => prevLocation)
+      );
     };
-  }, [downHandler]); // Empty array ensures that effect is only run on mount and unmount
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [downHandler]);
+
   return catLocation;
 }
