@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import GoToNext from "../navigation/next-nav";
-import ParallaxText from "./text";
+import SlideshowText from "./text-slideshow";
+// import ParallaxText from "./text";
 
 export default function ParallaxLoad() {
   const { width } = useWindowDimensions();
@@ -28,7 +29,7 @@ export default function ParallaxLoad() {
           className={`pos parallax2--fourth`}
           style={{ backgroundPosition: `${-(1 * catX)}px` }}
         />
-        <ParallaxText catPosition={catX} width={width} />
+        <SlideshowText catPosition={catX} width={width} />
       </div>
       <div className="nav">
         {catX > 0 && (

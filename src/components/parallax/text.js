@@ -4,9 +4,10 @@ export default function ParallaxText({ catPosition, width }) {
   return (
     <div className="parallax__text">
       <p className={`${catPosition > 0.1 * width ? "hideText" : "showText"} `}>
-        My passion for web dev started 6 years ago when I was introduced to GUIs
-        in Java. I thought that it would be so nice to have a career making
-        functional, appealing components.
+        I&apos;m a 3rd-year Computer Science student at Queen&apos;s University
+        with a strong Java, Python, and JavaScript foundation. I developed an
+        interest in full-stack development several years ago and learned
+        technologies like React, HTML/CSS, Node.js, and various databases.
       </p>
       <p
         className={`${
@@ -15,10 +16,10 @@ export default function ParallaxText({ catPosition, width }) {
             : "hideText"
         }`}
       >
-        I am a computer science student at Queen’s University who is comfortable
-        working with front-end technologies such as React, JavaScript, Node.js,
-        HTML, CSS, as well as connecting them to databases like MongoDB and
-        consuming various APIs.
+        My most recent internship was at Opencare, a startup, where I spent a
+        year as a Frontend Developer. There, I had the opportunity to make
+        larger-scale changes that directly contributed to a significant increase
+        in company metrics.
       </p>
       <p
         className={`${
@@ -27,9 +28,11 @@ export default function ParallaxText({ catPosition, width }) {
             : "hideText"
         }`}
       >
-        I spent my high school years working in fast food, vastly improving my
-        communication and leadership skills. It taught me how to manage time and
-        deal with stress all the while pushing out high quality products.
+        I&apos;m currently a Senior Developer at Queen&apos;s Tech & Media
+        Association, where I contribute to our team in building a product.
+        I&apos;m also the Frontend Development Director at Queen&apos;s
+        Computing Students&apos; Association, where I oversee both developers
+        and designers.
       </p>
       <p
         className={`${
@@ -38,10 +41,10 @@ export default function ParallaxText({ catPosition, width }) {
             : "hideText"
         }`}
       >
-        Currently, I am a co-chair at our web dev club, where I oversee the club
-        and ensure things are running smoothly. Last year I was an education
-        director and team lead, where I created tutorials and guided my team to
-        develop a client project.
+        Prior to these roles, I was the Co-chair of Queen&apos;s Web Development
+        Club, where I led the executives to provide an educational experience
+        and spread my passion for web development to its 400+ members. I was
+        also an Education Director and Team Lead at QWeb.
       </p>
       <p
         className={`${
@@ -50,10 +53,10 @@ export default function ParallaxText({ catPosition, width }) {
             : "hideText"
         }`}
       >
-        Currently, I am doing a year long coop at Opencare. Here I have the
-        chance to work with our apps written in AngularJS and React, making
-        changes as well as adding new additions to provide a better experience
-        for our users.
+        I love technology and work hard towards bettering myself as a developer
+        everyday. However, I also enjoy things outside of tech such as dancing,
+        learning languages, and playing games with friends. I also own two cats
+        &#x1F483;&#128008;&#x1F408;
       </p>
     </div>
   );

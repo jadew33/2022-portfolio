@@ -10,9 +10,13 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setError(false);
+    setSuccess(false);
 
     emailjs
       .sendForm(
@@ -24,9 +28,14 @@ export default function Contact() {
       .then(
         (result) => {
           console.log(result.text);
+          setName("");
+          setEmail("");
+          setMessage("");
+          setSuccess(true);
         },
         (error) => {
           console.log(error.text);
+          setError(true);
         }
       );
   };
@@ -74,13 +83,19 @@ export default function Contact() {
             value="Send"
             disabled={!name || !email || !message}
           />
+          {error && (
+            <span className="error">
+              Something went wrong, please try again.
+            </span>
+          )}
+          {success && <span>Successfully sent!</span>}
         </form>
       </div>
       <div className="links-container">
         <div>
           <img src={resume} alt="resume" />
           <a
-            href="https://drive.google.com/file/d/1oDvFkQLMyU0WyMFccr35GQWp0vd39lBD/view?usp=sharing"
+            href="https://docs.google.com/document/d/1ViDlGgHe4s5KWZWJAmzRI-bym033aOj2xmuTYMOOhz8/edit?usp=sharing"
             target="_blank"
             rel="noreferrer"
             className="hover-underline-animation"
@@ -111,8 +126,8 @@ export default function Contact() {
           </a>
         </div>
       </div>
-      <h1
-        className="back-to-top"
+      <span
+        className="back-to-top blinkText"
         onClick={() =>
           scroll.scrollToTop({
             duration: 1000,
@@ -120,7 +135,7 @@ export default function Contact() {
         }
       >
         Back to top
-      </h1>
+      </span>
     </div>
   );
 }
