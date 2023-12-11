@@ -6,7 +6,7 @@ export default function ProjectCard({
   video,
   skills,
 }) {
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   return (
     <div className="project-card">
       {width > 768 ? (

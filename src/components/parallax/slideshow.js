@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-import GoToNext from "../navigation/next-nav";
 import SlideshowText from "./text-slideshow";
-// import ParallaxText from "./text";
 
 export default function ParallaxLoad() {
   const { width } = useWindowDimensions();
