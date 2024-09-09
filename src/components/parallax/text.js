@@ -4,7 +4,7 @@ export default function ParallaxText({ catPosition, width }) {
   return (
     <div className="parallax__text">
       <p className={`${catPosition > 0.1 * width ? "hideText" : "showText"} `}>
-        I&apos;m a 3rd-year Computer Science student at Queen&apos;s University
+        I&apos;m a 4th-year Computer Science student at Queen&apos;s University
         with a strong Java, Python, and JavaScript foundation. I developed an
         interest in full-stack development several years ago and learned
         technologies like React, HTML/CSS, Node.js, and various databases.
@@ -16,10 +16,10 @@ export default function ParallaxText({ catPosition, width }) {
             : "hideText"
         }`}
       >
-        My most recent internship was at Opencare, a startup, where I spent a
-        year as a Frontend Developer. There, I had the opportunity to make
-        larger-scale changes that directly contributed to a significant increase
-        in company metrics.
+        My last internship was at Opencare, a startup, where I spent a year as a
+        Frontend Developer. There, I had the opportunity to make larger-scale
+        changes that directly contributed to a significant increase in company
+        metrics.
       </p>
       <p
         className={`${
@@ -28,11 +28,11 @@ export default function ParallaxText({ catPosition, width }) {
             : "hideText"
         }`}
       >
-        I&apos;m currently a Senior Developer at Queen&apos;s Tech & Media
-        Association, where I contribute to our team in building a product.
-        I&apos;m also the Frontend Development Director at Queen&apos;s
-        Computing Students&apos; Association, where I oversee both developers
-        and designers.
+        Recently, I was a Senior Developer at Queen&apos;s Tech & Media
+        Association, where I led the development of a start-up product. I was
+        also the Frontend Development Director at Queen&apos;s Computing
+        Students&apos; Association, where I oversaw both developers and
+        designers.
       </p>
       <p
         className={`${

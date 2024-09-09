@@ -95,7 +95,7 @@ export default function Contact() {
         <div>
           <img src={resume} alt="resume" />
           <a
-            href="https://docs.google.com/document/d/1ViDlGgHe4s5KWZWJAmzRI-bym033aOj2xmuTYMOOhz8/edit?usp=sharing"
+            href="https://drive.google.com/file/d/1D394ImMdPN_3hWqCJbjAOx9uTG6W6G2b/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             className="hover-underline-animation"

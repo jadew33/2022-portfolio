@@ -16,22 +16,20 @@ const projects = [
     link: "https://compsa.ca",
   },
   {
-    video: "https://www.youtube.com/embed/iDwGSl59GfI?si=abNvcLDsNmM81UQC",
+    video: "https://www.youtube.com/embed/NS-bbxMxWdE",
     title: "Queen's Tech & Media Association - Orah",
     skills: [
-      "HTML",
-      "CSS",
       "JavaScript",
       "AWS",
       "Node.js",
       "Express",
       "MongoDB",
       "Git",
-      "Swift",
+      "Java",
+      "Android",
     ],
     description:
-      "As the Senior Developer of Orah, I quickly built a full-stack waitlist site for our iOS application. Orah is a screen time management app that rewards users with coupons when they hit their screen time goals.",
-    link: "https://getorah.com",
+      "As the Senior Developer of Orah, I led the development of an full-stack Android screen time management app that rewards users with coupons when they hit their screen time goals.",
   },
   {
     video: "https://www.youtube.com/embed/bh4l28yDAAo?si=7DfZ2of_Cw0tBV0S",

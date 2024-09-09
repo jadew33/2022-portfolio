@@ -16,7 +16,7 @@ export default function Terminal() {
       <span className="key">school: </span>
       <span className="value">'Queen's University'</span>,<br />
       <span className="key">year of study: </span>
-      <span className="value">'Third Year'</span>,<br />
+      <span className="value">'Fourth Year'</span>,<br />
       {"}"};<br />
       <br />
       <span className="component">{"<Cat/>"}</span> <br />
